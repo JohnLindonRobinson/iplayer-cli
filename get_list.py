@@ -43,14 +43,21 @@ def get_episodes_from_series(url):
     @return: A list of all episodes in the series.'''
     request_data = requests.get(url)
     soup = bs4.BeautifulSoup(request_data.text, 'html.parser')
-    episodes = soup.find_all('a')
-    series_list = []
-    # print out all episodes
-    for episode in episodes:
-        if (string_contains(episode.get('href'), 'episode') and
-        not string_contains(episode.get('href'), 'episodes')):
-            series_list.append("https://bbc.co.uk"+episode.get('href'))
-    return series_list
+    links = soup.find_all('a')
+    episodes = []
+
+    for link in links:
+        if (string_contains(link.get('href'), 'episode') and
+        not string_contains(link.get('href'), 'episodes')):
+            episode_link = "https://bbc.co.uk"+link.get('href')
+            if episode_link in episodes:
+                continue
+            if len(episodes)>0:
+                if episode_link.split('/')[-1].split('?')[0]==episodes[0].split('/')[-1].split('?')[0]:
+                    continue
+            print(episode_link)
+            episodes.append(return_final_line_from_string(episode_link))
+    return episodes
 
 def get_list(url):
     '''main function of the program
@@ -64,26 +71,16 @@ def get_list(url):
     # Find all the links in the HTML document
     links = soup.find_all('a')
 
-    # Print the links
     episodes = []
-
-    for link in links:
-        if (string_contains(link.get('href'), 'episode') and
-        not string_contains(link.get('href'), 'episodes')):
-            episode_link = "https://bbc.co.uk"+link.get('href')
-            if episode_link in episodes:
-                continue
-            episodes.append(return_final_line_from_string(episode_link))
+    
+    episodes.extend(get_episodes_from_series(url))
     # print out all episodes on the page
     for link in links:
-        print(link)
-        if string_contains(link.get('href'), 'episodes'):
-            print(link.get('class'))
-            item = get_episodes_from_series(
-                'https://bbc.co.uk'+link.get('href'))
-            for given_episode in item:
-                if given_episode!=episodes[0]:
-                    episodes.append(return_final_line_from_string(given_episode))
+        if len(episodes)<0:
+            print("Invalid Series")
+            sys.exit(1)
+        if link.get('href').split('/')[-1].split('?')[0]==episodes[0].split('/')[-1].split('?')[0]:
+            episodes.extend(get_episodes_from_series("https://bbc.co.uk"+link.get('href'))[1])
     return episodes
 
 if __name__ == '__main__':
