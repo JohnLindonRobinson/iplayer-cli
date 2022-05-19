@@ -1,10 +1,10 @@
-''' iplayerScraper is a python module for scraping iPlayer data.
+''' iplayer-cli is a python module for scraping iPlayer data.
     @author Johnny Lindon Robinson (john@johnlindon.com)
     @version 0.1.0
 
-    https://github.com/JohnLindonRobinson/iplayerScraper
+    https://github.com/JohnLindonRobinson/iplayer-cli
 
-    This is the main module for the iplayerScraper.
+    This is the main module for the iplayer-cli.
 
     @dependencies:
     Python 3.5 or Higher
@@ -19,7 +19,7 @@ from series import Series, is_valid_url
 
 
 def main(input_series, input_name=None, input_episode=-1):
-    '''Main function for the iplayerScraper.
+    '''Main function for the iplayer-cli.
     @param inputSeries: The series to scrape.
     @param inputName: The name of the series.
     @param inputEpisode: The episode to scrape.

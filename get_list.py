@@ -1,8 +1,8 @@
-''' iplayerScraper List Gatherer
+''' iplayer-cli List Gatherer
     @author Johnny Lindon Robinson (john@johnlindon.com)
     @version 0.1.0
 
-    https://github.com/JohnLindonRobinson/iplayerScraper
+    https://github.com/JohnLindonRobinson/iplayer-cli
 
     This module is used for gathering links from HTML data from bbc iplayer website
 
@@ -37,6 +37,14 @@ def return_final_line_from_string(string):
     @return: The final line of the string.'''
     return string.split('\n')[-1]
 
+
+def get_first_episode_from_series(url):
+    '''Get the first episode from a series given a url.
+    @param url: The url of any episode in the series.
+    @return: The first episode of the series.'''
+    pass
+
+
 def get_episodes_from_series(url):
     '''Get all episodes from a series given a url.
     @param url: The url of the series.
@@ -62,7 +70,7 @@ def get_episodes_from_series(url):
 def get_list(url):
     '''main function of the program
     @param url: The input url of the series'''
-    # Get the HTML from the URL1
+    # Get the HTML from the URL
     response = requests.get(url)
 
     # Create a BeautifulSoup object from the HTML

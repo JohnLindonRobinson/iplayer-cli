@@ -1,8 +1,8 @@
-''' iplayerScraper File Handling
+''' iplayer-cli File Handling
     @author Johnny Lindon Robinson (john@johnlindon.com)
     @version 0.1.0
 
-    https://github.com/JohnLindonRobinson/iplayerScraper
+    https://github.com/JohnLindonRobinson/iplayer-cli
 
     This module is used for handling file management for the series objects
 

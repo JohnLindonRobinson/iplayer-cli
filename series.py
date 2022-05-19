@@ -1,8 +1,8 @@
-''' iplayerScraper Series Object
+''' iplayer-cli Series Object
     @author Johnny Lindon Robinson (
     @version 0.1.0
 
-    https://github.com/JohnLindonRobinson/iplayerScraper
+    https://github.com/JohnLindonRobinson/iplayer-cli
 
     This module is used for handling the series objects
 
