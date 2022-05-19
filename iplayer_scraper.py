@@ -11,6 +11,13 @@
     BeautifulSoup 4
 '''
 
+__author__ = 'Johnny Lindon Robinson (john@johnlindon.com)'
+__version__ = '0.1.0'
+__copyright__ = "Copyright (c) 2022-2022 Johnny Lindon Robinson"
+# Use of this source code is governed by the GPLv2 license.
+__license__ = "GPLv2.0"
+
+
 import argparse
 import sys
 
@@ -61,6 +68,15 @@ if __name__ == '__main__':
     parser.add_argument('-s', '--series', help='Series name', required=False)
     parser.add_argument('-n', '--name', help='Episode name', required=True)
     parser.add_argument('-e', '--episode', help='Episode number', required=False)
+
+    #parse version argument
+    if '-v' in sys.argv or '--version' in sys.argv:
+        print('iplayer-cli version '+__version__)
+        sys.exit(0)
+
+    if '-h' in sys.argv or '--help' in sys.argv:
+        parser.print_help()
+        sys.exit(0)
 
     #parse arguments
     args = parser.parse_args()
