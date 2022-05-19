@@ -6,14 +6,14 @@
 
     This module is used for handling file management for the series objects
 
-    @dependecies:
+    @dependencies:
     Python 3.5 or Higher
 '''
 
 __author__ = "Johnny Lindon Robinson (john@johnlindon.com)"
 __version__ = "0.1.0"
 __copyright__ = "Copyright (c) 2022-2022 Johnny Lindon Robinson"
-# Use of this source code is goverened by the GPLv2 license.
+# Use of this source code is governed by the GPLv2 license.
 __license__ = "GPLv2.0"
 
 import json

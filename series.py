@@ -6,14 +6,14 @@
 
     This module is used for handling the series objects
 
-    @dependecies:
+    @dependencies:
     Python 3.5 or Higher
 '''
 
 __author__ = "Johnny Lindon Robinson (john@johnlindon.com)"
 __version__ = "0.1.0"
 __copyright__ = "Copyright (c) 2022-2022 Johnny Lindon Robinson"
-# Use of this source code is goverened by the GPLv2 license.
+# Use of this source code is governed by the GPLv2 license.
 __license__ = "GPLv2.0"
 
 import json
@@ -24,7 +24,7 @@ from get_list import get_list, string_contains
 
 
 class Series:
-    '''Series Object containing neccessary data for a series
+    '''Series Object containing necessary data for a series
     Can be saved to a json file
     '''
 
@@ -83,6 +83,7 @@ class Series:
         @return: The current episode of the series'''
         return self.episode
 
+
     def set_episode(self, episode):
         '''Set the current episode of the series
         @param episode: The current episode of the series'''
@@ -94,11 +95,13 @@ class Series:
         @return: The link to the current episode of the series'''
         return self.episodes[self.episode]
 
-    def incriment_episode(self):
-        '''Incriment the current episode of the series
+
+    def increment_episode(self):
+        '''Increment the current episode of the series
         @return: If the series is completed'''
         self.episode += 1
         return self.episode < len(self.episodes)
+
 
     def get_episodes(self):
         '''Get the episodes of the series

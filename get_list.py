@@ -14,7 +14,7 @@
 __author__ = "Johnny Lindon Robinson (john@johnlindon.com)"
 __version__ = "0.1.0"
 __copyright__ = "Copyright (c) 2022-2022 Johnny Lindon Robinson"
-# Use of this source code is goverened by the GPLv2 license.
+# Use of this source code is governed by the GPLv2 license.
 __license__ = "GPLv2.0"
 
 
@@ -53,9 +53,9 @@ def get_episodes_from_series(url):
             if episode_link in episodes:
                 continue
             if len(episodes)>0:
-                if episode_link.split('/')[-1].split('?')[0]==episodes[0].split('/')[-1].split('?')[0]:
+                if(episode_link.split('/')[-1].split('?')[0]==
+                    episodes[0].split('/')[-1].split('?')[0]):
                     continue
-            print(episode_link)
             episodes.append(return_final_line_from_string(episode_link))
     return episodes
 
@@ -72,7 +72,6 @@ def get_list(url):
     links = soup.find_all('a')
 
     episodes = []
-    
     episodes.extend(get_episodes_from_series(url))
     # print out all episodes on the page
     for link in links:

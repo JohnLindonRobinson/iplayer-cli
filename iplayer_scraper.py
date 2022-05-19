@@ -32,9 +32,6 @@ def main(input_series, input_name=None, input_episode=-1):
     #check if series exists
     if not filehandling.check_if_series_exists('data.json', input_name):
         if len(sys.argv) > 1:
-            if sys.argv[1] == '-h':
-                print("Usage: python3 series.py <series name>")
-                sys.exit(0)
             if is_valid_url(sys.argv[1]):
                 srs = Series(url=input_series, name=input_name, episode=input_episode)
             else:
@@ -48,8 +45,8 @@ def main(input_series, input_name=None, input_episode=-1):
         srs.load()
     #update episodes
     srs.update_episodes()
-    #incriment episode
-    srs.incriment_episode()
+    #increment episode
+    srs.increment_episode()
     srs.save()
     #play next episode
     sys.stdout.write("mpv --fs --pause "+srs.return_current_episode_link())
