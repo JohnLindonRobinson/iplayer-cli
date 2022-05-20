@@ -19,6 +19,7 @@ __license__ = "GPLv2.0"
 
 
 import argparse
+import os
 import sys
 
 import filehandling
@@ -56,7 +57,7 @@ def main(input_series, input_name=None, input_episode=-1):
     srs.increment_episode()
     srs.save()
     #play next episode
-    sys.stdout.write("mpv --fs --pause "+srs.return_current_episode_link())
+    os.system("mpv --fs --pause "+srs.return_current_episode_link())
     #print current episode number
     print("\nCurrent episode: "+str(srs.get_episode()))
 
@@ -80,5 +81,5 @@ if __name__ == '__main__':
 
     #parse arguments
     args = parser.parse_args()
-    if args.series is not None:
+    if args.name is not None or args.series is not None:
         main(args.series, args.name, args.episode)
