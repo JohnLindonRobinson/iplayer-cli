@@ -1,5 +1,5 @@
 ''' iplayer-cli Series Object
-    @author Johnny Lindon Robinson (
+    @author Johnny Lindon Robinson (john@johnlindon.com)
     @version 0.1.0
 
     https://github.com/JohnLindonRobinson/iplayer-cli

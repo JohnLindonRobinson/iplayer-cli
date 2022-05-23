@@ -1,0 +1,13 @@
+LICENSE
+README.md
+setup.py
+iplayercli.egg-info/PKG-INFO
+iplayercli.egg-info/SOURCES.txt
+iplayercli.egg-info/dependency_links.txt
+iplayercli.egg-info/requires.txt
+iplayercli.egg-info/top_level.txt
+src/iplayer-cli/filehandling.py
+src/iplayer-cli/get_list.py
+src/iplayer-cli/iplayer_scraper.py
+src/iplayer-cli/series.py
+test/test.py
